@@ -1,40 +1,72 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="A minimalist task management application demonstrating advanced DOM manipulation and persistent data handling in vanilla JavaScript.">
-    <link rel="stylesheet" href="./style.css">      <!--CSS-->
-    <script src="https://kit.fontawesome.com/6fa05d4590.js" crossorigin="anonymous"></script>       <!--fontAwesome icons-->
-    <title>To-do List</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="A minimalist task management application demonstrating advanced DOM manipulation and persistent data handling in vanilla JavaScript." />
+  <link rel="stylesheet" href="./style.css" /> <!--CSS-->
+  <script src="https://kit.fontawesome.com/6fa05d4590.js" crossorigin="anonymous"></script> <!--fontAwesome icons-->
+  <title>To-do List</title>
 </head>
+
 <body>
-    
-    <div class="container">     <!--whole page's container-->
-        <div class="sidebar-container">     <!--sidebar-->
-            <div class="title-container">   <!--title in sidebar-->
-                <h1 class="title">Task Master</h1>
-            </div>
-            <div class="sidebar-options-container">     <!--options in sidebar-->
-                <ul>
-                    <li class="option-item"><a href="#" class="option-link"><i class="fa-solid fa-table-cells-large"></i> Dashboard</a></li>
-                    <li class="option-item"><a href="#" class="option-link"><i class="fa-solid fa-copy"></i> Projects</a></li>
-                    <li class="option-item"><a href="#" class="option-link"><i class="fa-solid fa-chart-column"></i> Analytics</a></li>
-                    <li class="option-item"><a href="#" class="option-link"><i class="fa-solid fa-gear"></i> Settings</a></li>
-                </ul>
-            </div>
-            <div class="sidebar-profile-container">     <!--profile in sidebar-->
-                <button class="sidebar-newTask-btn"><i class="fa-solid fa-plus"></i>New Task</button>
-                <div class="profile-container">
-                    <img src="" alt="profile image" class="profile-img">
-                    <h3 class="profile-username">Mohammad Zali</h3>
-                </div>
-            </div>
+  <div class="container">
+    <!--whole page's container-->
+    <div class="sidebar-container">
+      <!--sidebar-->
+      <div class="title-container">
+        <!--title in sidebar-->
+        <h1 class="title">Task Master</h1>
+      </div>
+      <div class="sidebar-options-container">
+        <!--options in sidebar-->
+        <ul>
+          <li class="option-item">
+            <a href="#" class="option-link"><i class="fa-solid fa-table-cells-large"></i> Dashboard</a>
+          </li>
+          <li class="option-item">
+            <a href="#" class="option-link"><i class="fa-solid fa-copy"></i> Projects</a>
+          </li>
+          <li class="option-item">
+            <a href="#" class="option-link"><i class="fa-solid fa-chart-column"></i> Analytics</a>
+          </li>
+        </ul>
+      </div>
+      <div class="sidebar-profile-container">
+        <!--profile in sidebar-->
+        <button class="sidebar-newTask-btn">
+          <i class="fa-solid fa-plus"></i>New Task
+        </button>
+        <div class="profile-container">
+          <img src="" alt="profile image" class="profile-img" />
+          <h3 class="profile-username">Mohammad Zali</h3>
         </div>
+      </div>
     </div>
 
-    <script src="./script.js"></script>
+    <div class="content-container">
+      <div class="notif-container">
+        <div class="blur"></div>
+        <h2 class="notif-heading">Welcome back, Mohammad</h2>
+        <p class="notif-text">You have <span>4 tasks</span> remaining for today.</p>
+        <button class="notif-newTask-btn">New Task</button>
+      </div>
+
+      <div class="completion-container">
+        <h2 class="completion-heading">Daily <br> Completion</h2>
+        <div class="completion-percentage">
+          <div class="inner-completion-percentage"><span>100%</span></div>
+        </div>
+        <p class="completion-text">4 of 8 tasks finished</p>
+      </div>
+    </div>
+  </div>
+
+  <script src="./script.js"></script>
 </body>
+
 </html>
 
 <!-- Challenge:
