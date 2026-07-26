@@ -15,7 +15,7 @@
 
 /* Whole page's container */
 .container{
-    width: 99vw;
+    width: 100%;
     min-height: 100vh;
     background-color: var(--dark-black);
     z-index: -1;
@@ -25,7 +25,7 @@
 /* sidebar */
 .sidebar-container{
     width: 350px;
-    min-height: 100vh;
+    height: 100vh;
     background-color: var(--light-black);
     padding: 40px 30px;
     position: relative;
@@ -353,7 +353,6 @@
 
 .tasks{
     width: 100%;
-    margin-left: 20px;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -363,8 +362,8 @@
 
 .task{
     display: flex;
-    width: 100%;
-    padding: 20px 20px;
+    width: 99%;
+    padding: 20px 50px 20px 20px;
     background-color: var(--light-black);
     display: flex;
     align-items: center;
@@ -391,4 +390,14 @@
     font-size: 18px;
     color: var(--dark-white);
     font-weight: 400;
+}
+
+.task-trash-icon{
+    color: var(--bright-white);
+    font-size: 14px;
+    margin-left: auto;
+}
+
+.task-trash-icon:hover{
+    opacity: 0.9;
 }
