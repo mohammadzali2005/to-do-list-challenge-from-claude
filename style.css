@@ -318,6 +318,17 @@
     font-weight: 400;
     border-top-right-radius: 5px;
     border-bottom-right-radius: 5px;
+    color: var(--bright-white);
+}
+
+.addNew-input:focus{
+    border-color: var(--dark-white);
+}
+
+.addNew-input:focus-visible{
+    outline: none;
+    border-color: inherit; 
+    box-shadow: none;
 }
 
 .addNew-btn{
