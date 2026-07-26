@@ -25,7 +25,7 @@
 /* sidebar */
 .sidebar-container{
     width: 350px;
-    height: 100vh;
+    min-height: 100vh;
     background-color: var(--light-black);
     padding: 40px 30px;
     position: relative;
@@ -233,18 +233,19 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 40px;
+    gap: 20px;
 }
 
 .completion-heading{
     font-size: 40px;
     color: var(--bright-white);
     font-weight: 400;
+    width: 40%;
 }
 
 .completion-percentage{
-    width: 200px;
-    height: 200px;
+    width: 30%;
+    height: 100%;
     border-radius: 50%;
     background-color: var(--yellow);
     display: flex;
@@ -263,13 +264,16 @@
 }
 
 .inner-completion-percentage span{
-    font-size: 45px;
+    font-size: 35px;
     color: var(--yellow);
 }
 
 .completion-text{
     font-size: 18px;
     color: var(--dark-white);
+    width: 30%;
+    text-align: center;
+    line-height: 25px;
 }
 
 /* add input */
@@ -304,7 +308,7 @@
 }
 
 .addNew-input{
-    width: 85%;
+    width: 80%;
     border: 1px solid var(--dark-white);
     border-left: none;
     background-color: var(--light-black);
@@ -363,7 +367,7 @@
 .task{
     display: flex;
     width: 99%;
-    padding: 20px 50px 20px 20px;
+    padding: 20px 20px;
     background-color: var(--light-black);
     display: flex;
     align-items: center;
@@ -400,4 +404,294 @@
 
 .task-trash-icon:hover{
     opacity: 0.9;
+}
+
+/* responsivenesses */
+@media (min-width: 1450px) and (max-width: 1600px){
+    .completion-heading{
+        font-size: 30px;
+    }
+
+    .completion-percentage{
+        width: 50%;
+    }
+}
+
+@media (min-width: 1300px) and (max-width: 1450px){
+    .sidebar-container{
+        width: 250px;
+    }
+
+    .title{
+        font-size: 30px;
+    }
+
+    .content-container{
+        width: calc(100vw - 200px);
+    }
+
+    .completion-container{
+        padding: 30px;
+    }
+    
+    .completion-heading{
+        font-size: 25px;
+        width: 30%;
+    }
+
+    .completion-percentage{
+        width: 40%;
+        height: 75%;
+    }
+
+    .inner-completion-percentage span{
+        font-size: 30px;
+    }
+}
+
+@media (min-width: 1150px) and (max-width: 1300px){
+    .sidebar-container{
+        width: 250px;
+    }
+
+    .title{
+        font-size: 30px;
+    }
+
+    .content-container{
+        width: calc(100vw - 200px);
+    }
+
+    .notif-container{
+        width: 40%;
+    }
+
+    .notif-heading{
+        font-size: 25px;
+    }
+
+    .completion-container{
+        padding: 25px;
+        width: 55%;
+    }
+    
+    .completion-heading{
+        font-size: 25px;
+        width: 30%;
+    }
+
+    .completion-percentage{
+        width: 40%;
+        height: 65%;
+    }
+
+    .inner-completion-percentage span{
+        font-size: 30px;
+    }
+
+    .addNew-input{
+        width: 75%;
+    }
+}
+
+@media (min-width: 950px) and (max-width: 1150px){
+    .sidebar-container{
+        width: 200px;
+    }
+
+    .title{
+        font-size: 25px;
+    }
+
+    .content-container{
+        width: calc(100vw - 150px);
+    }
+
+    .notif-container{
+        width: 35%;
+        gap: 15px;
+        padding: 35px;
+    }
+
+    .notif-heading{
+        font-size: 25px;
+    }
+
+    .completion-container{
+        padding: 25px;
+        width: 60%;
+        gap: 15px;
+    }
+    
+    .completion-heading{
+        font-size: 25px;
+        width: 30%;
+    }
+
+    .completion-percentage{
+        width: 40%;
+        height: 70%;
+    }
+
+    .inner-completion-percentage span{
+        font-size: 30px;
+    }
+
+    .addNew-input{
+        width: 70%;
+    }
+}
+
+@media (min-width: 750px) and (max-width: 950px){
+    .sidebar-container{
+        width: 200px;
+        padding: 40px 20px;
+    }
+
+    .title{
+        font-size: 25px;
+    }
+
+    .content-container{
+        width: calc(100vw - 150px);
+    }
+
+    .notif-container{
+        width: 100%;
+    }
+
+    .completion-container{
+        padding: 25px;
+        width: 100%;
+        gap: 25px;
+        margin-top: 25px;
+    }
+    
+    .completion-heading{
+        font-size: 30px;
+        width: 30%;
+    }
+
+    .completion-percentage{
+        width: 30%;
+        height: 70%;
+    }
+
+    .inner-completion-percentage span{
+        font-size: 30px;
+    }
+
+    .addNew-input{
+        width: 64%;
+    }
+}
+
+@media (min-width: 650px) and (max-width: 750px){
+    .sidebar-container{
+        width: 175px;
+        padding: 40px 20px;
+    }
+
+    .title{
+        font-size: 25px;
+    }
+
+    .content-container{
+        width: calc(100vw - 125px);
+    }
+
+    .notif-container{
+        width: 100%;
+    }
+
+    .completion-container{
+        padding: 25px;
+        width: 100%;
+        gap: 15px;
+        margin-top: 25px;
+    }
+    
+    .completion-heading{
+        font-size: 25px;
+        width: 30%;
+    }
+
+    .completion-percentage{
+        width: 35%;
+        height: 70%;
+    }
+
+    .inner-completion-percentage span{
+        font-size: 30px;
+    }
+
+    .addNew-input{
+        width: 56%;
+    }
+}
+
+@media (min-width: 450px) and (max-width: 650px){
+    .sidebar-container{
+        width: 175px;
+        padding: 40px 20px;
+    }
+
+    .title{
+        font-size: 25px;
+    }
+
+    .content-container{
+        width: calc(100vw - 125px);
+        padding: 20px;
+    }
+
+    .notif-container{
+        width: 100%;
+        padding: 35px;
+        gap: 20px;
+    }
+
+    .notif-heading{
+        font-size: 25px;
+    }
+
+    .completion-container{
+        padding: 15px;
+        width: 100%;
+        height: 300px;
+        gap: 15px;
+        margin-top: 25px;
+        flex-direction: column;
+    }
+    
+    .completion-heading{
+        font-size: 25px;
+        width: 100%;
+        text-align: center;
+    }
+
+    .completion-percentage{
+        width: 40%;
+        height: 100%;
+    }
+
+    .inner-completion-percentage span{
+        font-size: 25px;
+    }
+
+    .add-icon{
+        display: none;
+    }
+
+    .addNew-input{
+        width: 65%;
+        margin-right: 5px;
+        border-left: 1px solid var(--dark-white);
+        border-radius: 5px;
+    }
+
+    .addNew-btn{
+        padding: 10px 15px;
+        margin-left: 5px;
+    }
 }
