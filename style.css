@@ -411,10 +411,12 @@
     color: var(--bright-white);
     font-size: 14px;
     margin-left: auto;
+    padding: 5px;
 }
 
 .task-trash-icon:hover{
     opacity: 0.9;
+    cursor: pointer;
 }
 
 /* responsivenesses */
