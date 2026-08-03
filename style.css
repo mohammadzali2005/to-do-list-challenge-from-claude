@@ -419,6 +419,11 @@
     cursor: pointer;
 }
 
+.completed{
+    text-decoration: line-through;
+    opacity: .6;
+}
+
 /* responsivenesses */
 @media (min-width: 1450px) and (max-width: 1600px){
     .completion-heading{

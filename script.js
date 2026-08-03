@@ -28,6 +28,7 @@ let tasksCompletion = {
     notDone: 0
 }
 
+// updating task counters
 function updateTasksCounter(){
     // showing remaining tasks in notification container
     let remainingTasksCount = document.querySelector('.remaining-tasks');
@@ -49,7 +50,7 @@ function showTasks(){
     for (let i = 0; i < tasks.length; i++){
         tasksContainer.innerHTML += 
         `<div class="task">
-            <input type="radio" class="task-check">
+            <input type="checkbox" class="task-check">
             <h3 class="task-text">${tasks[i].text}</h3>
             <i class="fa-solid fa-trash task-trash-icon"></i>
           </div>`;
@@ -59,10 +60,11 @@ function showTasks(){
 // adding task
 function addTask(){
     tasks.push({
-        text: addInput.value
+        text: addInput.value,
+        completed: false
     });
 
-    tasksCompletion.notDone += 1;
+    tasksCompletion.notDone++;
     addInput.value = "";
 }
 
@@ -81,6 +83,26 @@ tasksContainer.addEventListener('click', (event) => {
 
       tasksCompletion.notDone--;
 
+      updateTasksCounter();
+    }
+  }
+});
+
+// events for when user checks the check box
+tasksContainer.addEventListener('change', (e) => {
+  if (e.target.classList.contains('task-check')) {
+    const container = e.target.closest('.task');
+    const text = container.querySelector('.task-text');
+
+    if (e.target.checked) {
+      text.classList.add('completed');
+      tasksCompletion.done++;       // updating the tasks counters
+      tasksCompletion.notDone--;
+      updateTasksCounter();
+    } else {
+      text.classList.remove('completed');
+      tasksCompletion.done--;       // updating the tasks counters
+      tasksCompletion.notDone++;
       updateTasksCounter();
     }
   }
