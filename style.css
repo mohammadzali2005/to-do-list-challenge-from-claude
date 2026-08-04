@@ -251,6 +251,9 @@
     display: flex;
     align-items: center;
     justify-content: center;
+
+    background: conic-gradient(#eab308 0%, #2d2d2d 0%);
+    transition: background 0.3s ease-in-out;
 }
 
 .inner-completion-percentage{

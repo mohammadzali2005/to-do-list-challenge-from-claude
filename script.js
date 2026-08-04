@@ -43,6 +43,25 @@ function updateTasksCounter(){
     totalTasksCount.innerText = tasksCompletion.done + tasksCompletion.notDone;
 }
 
+// updating completion percentage
+const completionPercentageRing = document.querySelector('.completion-percentage');
+const percentageSpan = document.querySelector('.inner-completion-percentage span');
+const doneTasksSpan = document.querySelector('.done-tasks');
+const totalTasksSpan = document.querySelector('.total-tasks');
+
+function updateProgress(totalTasks, completedTasks) {
+  let percentage = 0;
+  if (totalTasks > 0) {
+    percentage = Math.round((completedTasks / totalTasks) * 100);   // calculating done tasks' percentage
+  }
+
+  percentageSpan.textContent = `${percentage}%`;
+  doneTasksSpan.textContent = completedTasks;
+  totalTasksSpan.textContent = totalTasks;
+
+  completionPercentageRing.style.background = `conic-gradient(#eab308 ${percentage}%, #2d2d2d ${percentage}% 100%)`;
+}
+
 // showing the tasks
 function showTasks(){
     tasksContainer.innerHTML = "";
@@ -66,6 +85,8 @@ function addTask(){
 
     tasksCompletion.notDone++;
     addInput.value = "";
+
+    updateProgress(tasks.length, tasksCompletion.done);
 }
 
 addBtn.addEventListener('click', () => {
@@ -84,6 +105,7 @@ tasksContainer.addEventListener('click', (event) => {
       tasksCompletion.notDone--;
 
       updateTasksCounter();
+      updateProgress(tasks.length, tasksCompletion.done);
     }
   }
 });
@@ -98,12 +120,20 @@ tasksContainer.addEventListener('change', (e) => {
       text.classList.add('completed');
       tasksCompletion.done++;       // updating the tasks counters
       tasksCompletion.notDone--;
-      updateTasksCounter();
     } else {
       text.classList.remove('completed');
       tasksCompletion.done--;       // updating the tasks counters
       tasksCompletion.notDone++;
-      updateTasksCounter();
     }
+
+    updateTasksCounter();
+    updateProgress(tasks.length, tasksCompletion.done);
+  }  
+});
+
+addInput.addEventListener('keydown', (event) => {
+  if (event.key === 'Enter') {
+    event.preventDefault(); // Prevents default form submission/refresh behavior
+    addBtn.click();        // Triggers the click event on your Add button
   }
 });
