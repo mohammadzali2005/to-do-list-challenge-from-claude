@@ -25,7 +25,7 @@
 /* sidebar */
 .sidebar-container{
     width: 350px;
-    min-height: 100vh;
+    min-height: 40vh;
     background-color: var(--light-black);
     padding: 40px 30px;
     position: relative;
@@ -158,7 +158,7 @@
 
 /* main content */
 .content-container{
-    width: calc(100vw - 300px);
+    width: 100%;
     min-height: 100vh;
     display: flex;
     justify-content: space-between;
@@ -447,10 +447,6 @@
         font-size: 30px;
     }
 
-    .content-container{
-        width: calc(100vw - 200px);
-    }
-
     .completion-container{
         padding: 30px;
     }
@@ -657,12 +653,15 @@
         padding: 40px 20px;
     }
 
+    .profile-username{
+        font-size: 12px;
+    }
+
     .title{
         font-size: 25px;
     }
 
     .content-container{
-        width: calc(100vw - 125px);
         padding: 20px;
     }
 
@@ -714,5 +713,87 @@
     .addNew-btn{
         padding: 10px 15px;
         margin-left: 5px;
+    }
+}
+
+@media (max-width: 450px){
+    .container{
+        flex-direction: column;
+    }
+
+    .sidebar-container{
+        width: 100%;
+    }
+
+    .content-container{
+        width: 100%;
+        min-height: 100vh;
+        flex-direction: column;
+    }
+
+    .notif-container, .completion-container{
+        width: 100%;
+        padding: 10px;
+    }
+
+    .notif-heading{
+        font-size: 26px;
+    }
+
+    .completion-container{
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .completion-container{
+        padding: 15px;
+        width: 100%;
+        height: 300px;
+        gap: 15px;
+        margin-top: 25px;
+        flex-direction: column;
+    }
+    
+    .completion-heading{
+        font-size: 25px;
+        width: 100%;
+        text-align: center;
+    }
+
+    .completion-percentage{
+        width: 40%;
+        height: 100%;
+    }
+
+    .inner-completion-percentage span{
+        font-size: 25px;
+    }
+
+    .add-icon{
+        display: none;
+    }
+
+    .addNew-container{
+        flex-direction: column;
+        flex-wrap: wrap;
+        margin-top: 25px;
+        gap: 10px;
+    }
+
+    .addNew-input{
+        width: 100%;
+        border: 1px solid var(--dark-white);
+        border-radius: 5px;
+        font-size: 16px;
+    }
+
+    .addNew-btn{
+        z-index: 0;
+        position: relative;
+    }
+
+    .tasks-container{
+        margin-top: 10px;
     }
 }
